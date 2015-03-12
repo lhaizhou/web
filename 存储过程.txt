@@ -1,0 +1,52 @@
+declare 
+v_name varchar2(5);
+begin
+  select ename into v_name from emp where empno=&no;
+  dbms_output.put_line('guyuanming:'||v_name);
+  end;
+
+
+declare 
+v_name varchar2(5);
+v_sal number(7,2);
+begin
+  select ename,sal into v_name,v_sal from emp where empno=&no;
+  dbms_output.put_line('guyuanming:'||v_name || 'gongzi:'||v_sal);
+  end;
+
+
+
+--定义变量
+declare 
+v_name varchar2(5);
+v_sal number(7,2);
+--执行部分
+begin
+  select ename,sal into v_name,v_sal from emp where empno=&no;
+  dbms_output.put_line('guyuanming:'||v_name || 'gongzi:'||v_sal);
+--异常处理
+exception
+  when no_data_found then
+  dbms_output.put_line('sss');
+end;
+
+
+
+--案例更新人员的工资
+create procedure haizhou4(spname varchar2,newsal number) is
+begin
+--执行
+update emp set set=newsal where ename=spname;
+end;
+
+--函数，输入人员姓名 返回人员年薪
+create function hs1(spname varchar2) return
+number is yearsal number(7,2);
+begin
+  --执行部分
+  select sal*12+nvl(comm,0)*12 into yearsal from emp where ename=spname
+  return yearsal;
+  end;
+
+
+
