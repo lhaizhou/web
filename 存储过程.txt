@@ -16,9 +16,7 @@ begin
 uanming:'||v_name || 'gongzi:'||v_sal);
 --“Ï≥£¥¶¿Ì
 exception
-  when no_data_found then
-  dbms_output.put_line('sss');
-end;
+  when n
 
 
 
