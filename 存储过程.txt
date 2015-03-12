@@ -13,17 +13,7 @@ begin
   select ename,sal into v_name,v_sal from emp where empno=&no;
   dbms_output.put_line('guyuanming:'||v_name || 'gongzi:'||v_sal);
   end;
-
-
-
---定义变量
-declare 
-v_name varchar2(5);
-v_sal number(7,2);
---执行部分
-begin
-  select ename,sal into v_name,v_sal from emp where empno=&no;
-  dbms_output.put_line('guyuanming:'||v_name || 'gongzi:'||v_sal);
+uanming:'||v_name || 'gongzi:'||v_sal);
 --异常处理
 exception
   when no_data_found then
